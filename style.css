@@ -41,6 +41,8 @@ body {
 .dashboard {
   display: flex;
   justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .dashboard__content-1,
 .dashboard__content-2 {
@@ -58,6 +60,20 @@ body {
 .dashboard__content-1 {
   display: flex;
 }
+.dashboard__content-2 {
+  display: flex;
+  justify-content: end;
+}
+.dashboard__content-2 div {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 8px;
+}
 .username {
   padding-left: 6px;
   padding-top: 6px;
@@ -74,7 +90,7 @@ body {
     width: 13%;
   }
   .container {
-    width: 67%;
+    width: 60%;
   }
 }
 
@@ -84,10 +100,10 @@ body {
     box-shadow: none;
   }
   .container {
-    width: 67%;
+    width: 46%;
   }
   .nav div {
-    width: 16%;
+    width: 10%;
   }
 }
 @media (max-width: 400px) {
