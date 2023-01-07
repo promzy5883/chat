@@ -152,7 +152,34 @@ body {
   align-items: center;
   color: white;
   cursor: pointer;
-  z-index: -1;
+  transform: translateX(100%);
+}
+.unread {
+  height: 100%;
+  position: absolute;
+  background-color: rgb(110, 110, 250);
+  width: 20%;
+  display: flex;
+  left: 0;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  transform: translateX(-100%);
+}
+.pin {
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  top: 0;
+  transform: translateX(-100%);
 }
 .more {
   height: 100%;
@@ -195,13 +222,22 @@ body {
   font-family: "Times New Roman", Times, serif;
 }
 .del {
-  animation: delete 0.6s linear 1 forwards;
+  animation: delete 0.5s linear 1 forwards;
 }
 .mess {
   animation: message 0.5s linear 1 forwards;
 }
 .mor {
   animation: more 0.5s linear 1 forwards;
+}
+.pi {
+  animation: pin 0.5s linear 1 forwards;
+}
+.messL {
+  animation: messageLeft 0.5s linear 1 forwards;
+}
+.unr {
+  animation: unread 0.5s linear 1 forwards;
 }
 .text-name {
   font-weight: bold;
@@ -259,10 +295,10 @@ body {
 }
 @keyframes delete {
   from {
-    z-index: -1;
+    transform: translateX(100%);
   }
   to {
-    z-index: 1;
+    transform: translateX(0);
   }
 }
 @keyframes message {
@@ -271,5 +307,30 @@ body {
   }
   to {
     transform: translateX(-40%);
+  }
+}
+
+@keyframes pin {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes unread {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes messageLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(40%);
   }
 }
