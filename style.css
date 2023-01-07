@@ -8,7 +8,7 @@ body {
   padding: 15px 15px;
   display: flex;
   justify-content: center;
-  background: rgb(247, 243, 243);
+  background: rgb(255, 252, 252);
 }
 .nav {
   position: fixed;
@@ -59,6 +59,9 @@ body {
 }
 .chat-section {
   width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 .dashboard__content-1 {
   display: flex;
@@ -91,7 +94,6 @@ body {
 .title {
   font-size: 25px;
   padding-top: 20px;
-  padding-left: 12px;
   padding-bottom: 20px;
   font-weight: 200;
   font-family: "Times New Roman", Times, serif;
@@ -99,10 +101,9 @@ body {
 .searchbox {
   display: flex;
   padding-left: 22px;
-  background-color: transparent;
-  padding: 5px 5px;
-  margin-bottom: 20px;
-  box-shadow: 0.3px 0.3px 2px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  margin-bottom: 22px;
+  background-color: #fbfbf9;
 }
 .searchbox i {
   font-size: 20px;
@@ -110,7 +111,7 @@ body {
   align-self: center;
 }
 .searchbox input {
-  background-color: transparent;
+  background-color: #fbfbf9;
   width: 100%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -124,6 +125,95 @@ body {
   border: none;
   outline: none;
 }
+.message-box {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+  background: rgb(255, 252, 252);
+}
+.box1 {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+.delete {
+  height: 100%;
+  position: absolute;
+  background-color: rgb(110, 110, 250);
+  width: 20%;
+  display: flex;
+  right: 0;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  z-index: -1;
+}
+.more {
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  right: 20%;
+  top: 0;
+  transform: translateX(200%);
+}
+.user-image {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.user-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.messages {
+  width: 100%;
+  /* overflow-y: scroll;
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+  overflow-y: scroll; */
+}
+/*.messages::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera 
+}*/
+.text {
+  padding-left: 8px;
+  font-size: 13px;
+  font-weight: 100;
+  font-family: "Times New Roman", Times, serif;
+}
+.del {
+  animation: delete 0.6s linear 1 forwards;
+}
+.mess {
+  animation: message 0.5s linear 1 forwards;
+}
+.mor {
+  animation: more 0.5s linear 1 forwards;
+}
+.text-name {
+  font-weight: bold;
+  font-size: 15px;
+}
+.row {
+  display: flex;
+}
+.time {
+  font-size: small;
+  padding-right: 8px;
+}
 @media (min-width: 700px) {
   .nav {
     justify-content: center;
@@ -136,18 +226,7 @@ body {
     width: 60%;
   }
 }
-.messages {
-  width: 100%;
-  overflow-y: scroll;
-  -ms-overflow-style: none; /* for Internet Explorer, Edge */
-  scrollbar-width: none; /* for Firefox */
-  overflow-y: scroll;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.messages::-webkit-scrollbar {
-  display: none; /* for Chrome, Safari, and Opera */
-}
+
 @media (min-width: 1000px) {
   .nav {
     justify-content: center;
@@ -167,5 +246,30 @@ body {
   }
   .username {
     font-size: small;
+  }
+}
+
+@keyframes more {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes delete {
+  from {
+    z-index: -1;
+  }
+  to {
+    z-index: 1;
+  }
+}
+@keyframes message {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-40%);
   }
 }
