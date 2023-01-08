@@ -126,74 +126,73 @@ body {
   outline: none;
 }
 .message-box {
-  width: 100%;
+  min-width: 100%;
   padding: 20px 0;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
-  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
   background: rgb(255, 252, 252);
+  height: 100%;
+  box-sizing: border-box;
 }
 .box1 {
   width: 100%;
   position: relative;
-  overflow-x: hidden;
+  overflow-x: scroll;
+  height: 90px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  display: flex;
+}
+.box1::-webkit-scrollbar {
+  display: none;
 }
 .delete {
-  height: 100%;
-  position: absolute;
+  min-height: 100%;
   background-color: rgb(110, 110, 250);
-  width: 20%;
   display: flex;
-  right: 0;
-  top: 0;
+  min-width: 20%;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   color: white;
   cursor: pointer;
-  transform: translateX(100%);
 }
+
 .unread {
-  height: 100%;
-  position: absolute;
+  min-height: 100%;
   background-color: rgb(110, 110, 250);
-  width: 20%;
+  min-width: 20%;
   display: flex;
-  left: 0;
-  top: 0;
   justify-content: center;
   align-items: center;
   color: white;
+  flex-direction: column;
   cursor: pointer;
-  transform: translateX(-100%);
 }
 .pin {
-  height: 100%;
-  position: absolute;
+  min-height: 100%;
+  display: none;
   background-color: rgba(0, 0, 0, 0.5);
-  width: 20%;
-  display: flex;
+  min-width: 20%;
+  /* display: flex;*/
   justify-content: center;
   align-items: center;
   color: white;
   cursor: pointer;
-  top: 0;
-  transform: translateX(-100%);
+  flex-direction: column;
 }
 .more {
-  height: 100%;
-  position: absolute;
+  min-height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  width: 20%;
+  min-width: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   cursor: pointer;
-  right: 20%;
-  top: 0;
-  transform: translateX(200%);
+  flex-direction: column;
 }
 .user-image {
   width: 35px;
@@ -221,34 +220,24 @@ body {
   font-weight: 100;
   font-family: "Times New Roman", Times, serif;
 }
-.del {
-  animation: delete 0.5s linear 1 forwards;
+.text p::selection,
+.text img::selection,
+.unread::selection {
+  color: none;
+  background: none;
 }
-.mess {
-  animation: message 0.5s linear 1 forwards;
-}
-.mor {
-  animation: more 0.5s linear 1 forwards;
-}
-.pi {
-  animation: pin 0.5s linear 1 forwards;
-}
-.messL {
-  animation: messageLeft 0.5s linear 1 forwards;
-}
-.unr {
-  animation: unread 0.5s linear 1 forwards;
-}
+
 .text-name {
   font-weight: bold;
   font-size: 15px;
 }
 .row {
   display: flex;
+  padding-left: 10px;
 }
 .time {
   font-size: small;
-  padding-right: 8px;
+  padding-right: 18px;
 }
 @media (min-width: 700px) {
   .nav {
@@ -282,55 +271,5 @@ body {
   }
   .username {
     font-size: small;
-  }
-}
-
-@keyframes more {
-  from {
-    transform: translateX(200%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-@keyframes delete {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-@keyframes message {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-40%);
-  }
-}
-
-@keyframes pin {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(100%);
-  }
-}
-@keyframes unread {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-@keyframes messageLeft {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(40%);
   }
 }
