@@ -173,10 +173,9 @@ body {
 }
 .pin {
   min-height: 100%;
-  display: none;
   background-color: rgba(0, 0, 0, 0.5);
   min-width: 20%;
-  /* display: flex;*/
+  display: flex;
   justify-content: center;
   align-items: center;
   color: white;
