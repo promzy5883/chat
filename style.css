@@ -272,4 +272,7 @@ body {
   .username {
     font-size: small;
   }
+  .sideName {
+    font-size: small;
+  }
 }
