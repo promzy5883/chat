@@ -277,6 +277,10 @@ body {
     font-size: small;
   }
   .sideName {
-    font-size: 5px;
+    font-size: 10px;
+    padding-top: 10px;
+  }
+  .text-name {
+    padding-top: 4px;
   }
 }
