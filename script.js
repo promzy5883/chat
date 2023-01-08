@@ -46,5 +46,9 @@ function getMouseDirection(e) {
 */
 
 var parent = document.getElementById("parent");
-parent.scrollLeft += document.querySelector(".unread").clientWidth;
-parent.scrollLeft += document.querySelector(".pin").clientWidth;
+parent.scrollLeft += document.querySelector("#unread").clientWidth;
+parent.scrollLeft += document.querySelector("#pin").clientWidth;
+
+var parent2 = document.getElementById("parent2");
+parent2.scrollLeft += document.querySelector("#unread2").clientWidth;
+parent2.scrollLeft += document.querySelector("#pin2").clientWidth;
