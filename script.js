@@ -3,36 +3,32 @@ parent.scrollLeft += document.querySelector("#unread").clientWidth;
 parent.scrollLeft += document.querySelector("#pin").clientWidth;
 var position;
 window.mouseDown = false;
-document.onmousedown = function (e) {
-  if (window.innerWidth > 500) {
+if (window.innerWidth > 500) {
+  document.onmousedown = function (e) {
     window.mouseDown = true;
     position = e.pageX + 230;
     position2 = e.pageX + 230;
     position3 = e.pageX + 230;
     position4 = e.pageX + 230;
-  } else {
+  };
+}
+if (window.innerWidth > 500) {
+  document.onmouseup = function () {
     window.mouseDown = false;
-    position = -1;
-    position2 = -1;
-    position3 = -1;
-    position4 = -1;
-  }
-};
-document.onmouseup = function () {
-  window.mouseDown = false;
-  if (parent.scrollLeft < 453 && parent.scrollLeft != 0) {
-    parent.scrollLeft = 230;
-  }
-  if (parent2.scrollLeft < 453 && parent2.scrollLeft != 0) {
-    parent2.scrollLeft = 230;
-  }
-  if (parent3.scrollLeft < 453 && parent3.scrollLeft != 0) {
-    parent3.scrollLeft = 230;
-  }
-  if (parent4.scrollLeft < 453 && parent4.scrollLeft != 0) {
-    parent4.scrollLeft = 230;
-  }
-};
+    if (parent.scrollLeft < 453 && parent.scrollLeft != 0) {
+      parent.scrollLeft = 230;
+    }
+    if (parent2.scrollLeft < 453 && parent2.scrollLeft != 0) {
+      parent2.scrollLeft = 230;
+    }
+    if (parent3.scrollLeft < 453 && parent3.scrollLeft != 0) {
+      parent3.scrollLeft = 230;
+    }
+    if (parent4.scrollLeft < 453 && parent4.scrollLeft != 0) {
+      parent4.scrollLeft = 230;
+    }
+  };
+}
 parent.addEventListener("mousemove", (e) => {
   if (window.mouseDown) {
     var remainder = position - e.pageX;
