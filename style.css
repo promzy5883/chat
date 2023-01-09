@@ -373,4 +373,12 @@ body {
   .text-name {
     padding-top: 4px;
   }
+  .chat-section,
+  .call-section,
+  .home-section {
+    height: 65%;
+  }
+  .community-section {
+    height: 65%;
+  }
 }
