@@ -382,25 +382,4 @@ body {
   .community-section {
     height: 65%;
   }
-  .box1,
-  .box2,
-  .box3,
-  .box4 {
-    width: 100%;
-    position: relative;
-    overflow-x: hidden;
-    height: 90px;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    display: flex;
-  }
-  .disappear {
-    display: none;
-  }
-  .box1::-webkit-scrollbar,
-  .box2::-webkit-scrollbar,
-  .box3::-webkit-scrollbar,
-  .box4::-webkit-scrollbar {
-    display: none;
-  }
 }
