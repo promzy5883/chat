@@ -20,6 +20,7 @@ body {
   height: 60px;
   align-items: center;
   box-shadow: 0 -0.5px 3px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
 }
 .nav div {
   width: 20%;
@@ -28,8 +29,13 @@ body {
   align-items: center;
   cursor: pointer;
   margin-right: 5px;
+  padding: 10px 0;
+  box-sizing: border-box;
+  padding-bottom: 10px;
 }
-
+.nav div:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
 .nav div p {
   padding-top: 5px;
 }

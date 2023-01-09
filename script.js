@@ -123,3 +123,84 @@ var homeButton = document.getElementById("homeButton");
 var callButton = document.getElementById("callButton");
 var communityButton = document.getElementById("communityButton");
 var chatsButton = document.getElementById("chatsButton");
+
+var homeText = document.getElementsByClassName("homeText");
+var communityText = document.getElementsByClassName("communityText");
+var chatText = document.getElementsByClassName("chatText");
+var callText = document.getElementsByClassName("callText");
+
+homeButton.addEventListener("click", () => {
+  chatPosition = 100;
+  homePosition = 0;
+  communityPosition = 100;
+  callPosition = -100;
+  chatSection.style.transform = `translateX(${chatPosition}%)`;
+  homeSection.style.transform = `translateX(${homePosition})`;
+  callSection.style.transform = `translateX(${callPosition}%)`;
+  communitySection.style.transform = `translateX(${communityPosition}%)`;
+  homeText[0].style.color = "blue";
+  homeText[1].style.color = "blue";
+  communityText[0].style.color = "black";
+  communityText[1].style.color = "black";
+  chatText[0].style.color = "black";
+  chatText[1].style.color = "black";
+  callText[0].style.color = "black";
+  callText[1].style.color = "black";
+});
+
+chatsButton.addEventListener("click", () => {
+  chatPosition = 0;
+  homePosition = -100;
+  communityPosition = 100;
+  callPosition = -100;
+  chatSection.style.transform = `translateX(${chatPosition})`;
+  homeSection.style.transform = `translateX(${homePosition}%)`;
+  communitySection.style.transform = `translateX(${communityPosition}%)`;
+  callSection.style.transform = `translateX(${callPosition}%)`;
+  homeText[0].style.color = "black";
+  homeText[1].style.color = "black";
+  communityText[0].style.color = "black";
+  communityText[1].style.color = "black";
+  chatText[0].style.color = "blue";
+  chatText[1].style.color = "blue";
+  callText[0].style.color = "black";
+  callText[1].style.color = "black";
+});
+
+communityButton.addEventListener("click", () => {
+  communityPosition = 0;
+  chatPosition = 100;
+  homePosition = -100;
+  callPosition = -100;
+  chatSection.style.transform = `translateX(${chatPosition}%)`;
+  homeSection.style.transform = `translateX(${homePosition}%)`;
+  callSection.style.transform = `translateX(${callPosition}%)`;
+  communitySection.style.transform = `translateX(${communityPosition})`;
+  homeText[0].style.color = "black";
+  homeText[1].style.color = "black";
+  communityText[0].style.color = "blue";
+  communityText[1].style.color = "blue";
+  chatText[0].style.color = "black";
+  chatText[1].style.color = "black";
+  callText[0].style.color = "black";
+  callText[1].style.color = "black";
+});
+
+callButton.addEventListener("click", () => {
+  communityPosition = 100;
+  chatPosition = 100;
+  homePosition = -100;
+  callPosition = 0;
+  chatSection.style.transform = `translateX(${chatPosition}%)`;
+  homeSection.style.transform = `translateX(${homePosition}%)`;
+  callSection.style.transform = `translateX(${callPosition})`;
+  communitySection.style.transform = `translateX(${communityPosition}%)`;
+  homeText[0].style.color = "black";
+  homeText[1].style.color = "black";
+  communityText[0].style.color = "black";
+  communityText[1].style.color = "black";
+  chatText[0].style.color = "black";
+  chatText[1].style.color = "black";
+  callText[0].style.color = "blue";
+  callText[1].style.color = "blue";
+});
