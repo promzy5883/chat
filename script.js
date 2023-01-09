@@ -30,11 +30,12 @@ parent.addEventListener("mousemove", (e) => {
     var remainder = position - e.pageX;
     remainder = remainder > 453 ? 453 : remainder;
     remainder = remainder < 0 ? 0 : remainder;
-
-    parent.scrollLeft = remainder;
-    parent2.scrollLeft = 230;
-    parent3.scrollLeft = 230;
-    parent4.scrollLeft = 230;
+    if (window.innerWidth > 500) {
+      parent.scrollLeft = remainder;
+      parent2.scrollLeft = 230;
+      parent3.scrollLeft = 230;
+      parent4.scrollLeft = 230;
+    }
   }
 });
 
@@ -52,11 +53,12 @@ parent2.addEventListener("mousemove", (e) => {
     var remainder = position2 - e.pageX;
     remainder = remainder > 453 ? 453 : remainder;
     remainder = remainder < 0 ? 0 : remainder;
-
-    parent2.scrollLeft = remainder;
-    parent.scrollLeft = 230;
-    parent3.scrollLeft = 230;
-    parent4.scrollLeft = 230;
+    if (window.innerWidth > 500) {
+      parent2.scrollLeft = remainder;
+      parent.scrollLeft = 230;
+      parent3.scrollLeft = 230;
+      parent4.scrollLeft = 230;
+    }
   }
 });
 
@@ -74,11 +76,12 @@ parent3.addEventListener("mousemove", (e) => {
     var remainder = position3 - e.pageX;
     remainder = remainder > 453 ? 453 : remainder;
     remainder = remainder < 0 ? 0 : remainder;
-
-    parent3.scrollLeft = remainder;
-    parent.scrollLeft = 230;
-    parent2.scrollLeft = 230;
-    parent4.scrollLeft = 230;
+    if (window.innerWidth > 500) {
+      parent3.scrollLeft = remainder;
+      parent.scrollLeft = 230;
+      parent2.scrollLeft = 230;
+      parent4.scrollLeft = 230;
+    }
   }
 });
 
@@ -96,11 +99,12 @@ parent4.addEventListener("mousemove", (e) => {
     var remainder = position4 - e.pageX;
     remainder = remainder > 453 ? 453 : remainder;
     remainder = remainder < 0 ? 0 : remainder;
-
-    parent4.scrollLeft = remainder;
-    parent.scrollLeft = 230;
-    parent2.scrollLeft = 230;
-    parent3.scrollLeft = 230;
+    if (window.innerWidth > 500) {
+      parent4.scrollLeft = remainder;
+      parent.scrollLeft = 230;
+      parent2.scrollLeft = 230;
+      parent3.scrollLeft = 230;
+    }
   }
 });
 
@@ -204,3 +208,7 @@ callButton.addEventListener("click", () => {
   callText[0].style.color = "blue";
   callText[1].style.color = "blue";
 });
+
+var x = window.matchMedia("(min-width: 300px)");
+myFunction(x);
+x.addListener(myFunction);
