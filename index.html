@@ -14,19 +14,19 @@
   <body>
     <div class="container">
       <nav class="nav">
-        <div>
+        <div onclick="moveHome()" id="homeButton">
           <i class="fa-solid fa-house"></i>
           <p>Home</p>
         </div>
         <div>
-          <i class="fa-solid fa-phone"></i>
+          <i class="fa-solid fa-phone" id="callButton"></i>
           <p>Call</p>
         </div>
-        <div>
-          <i class="fa-regular fa-comments"></i>
+        <div id="chatsButton">
+          <i class="fa-regular fa-comments" onclick="moveChat()"></i>
           <p>Chats</p>
         </div>
-        <div>
+        <div id="communityButton">
           <i class="fa-solid fa-users"></i>
           <p>Community</p>
         </div>
@@ -44,72 +44,136 @@
         </div>
       </div>
       <div class="layer">
-        <section class="chat-section">
-          <h2 class="title">Chats</h2>
-          <div class="searchbox">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="search" placeholder="search" />
-          </div>
-          <div class="messages">
-            <div class="box1" id="parent">
-              <div class="unread" id="unread">
-                <i class="fa-regular fa-comment-dots"></i>
-                <p class="sideName">Unread</p>
+        <section class="view">
+          <div class="chat-section" id="chat-section">
+            <h2 class="title">Chats</h2>
+            <div class="searchbox">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="search" placeholder="search" />
+            </div>
+            <div class="messages">
+              <div class="box1" id="parent">
+                <div class="unread" id="unread">
+                  <i class="fa-regular fa-comment-dots"></i>
+                  <p class="sideName">Unread</p>
+                </div>
+                <div class="pin" id="pin">
+                  <i class="fa-solid fa-thumbtack"></i>
+                  <p class="sideName">Pin</p>
+                </div>
+
+                <div class="message-box" id="message">
+                  <div class="row">
+                    <div class="user-image"></div>
+                    <div class="text">
+                      <p class="text-name">Joy</p>
+                      <p class="sideName">Hey John, Are you free for a job</p>
+                    </div>
+                  </div>
+                  <div class="time">11:30Am</div>
+                </div>
+                <div class="more" id="more">
+                  <i class="fa-solid fa-ellipsis"></i>
+                  <p class="sideName">More</p>
+                </div>
+                <div class="delete" id="delete" onclick="delOne()">
+                  <i class="fa-solid fa-trash"></i>
+                  <p class="sideName">Delete</p>
+                </div>
               </div>
-              <div class="pin" id="pin">
-                <i class="fa-solid fa-thumbtack"></i>
-                <p class="sideName">Pin</p>
+              <div class="box2" id="parent2">
+                <div class="unread" id="unread2">
+                  <i class="fa-regular fa-comment-dots"></i>
+                  <p class="sideName">Unread</p>
+                </div>
+                <div class="pin" id="pin2">
+                  <i class="fa-solid fa-thumbtack"></i>
+                  <p class="sideName">Pin</p>
+                </div>
+
+                <div class="message-box" id="message1">
+                  <div class="row">
+                    <div class="user-image2"></div>
+                    <div class="text">
+                      <p class="text-name">Victor</p>
+                      <p class="sideName">How far guy</p>
+                    </div>
+                  </div>
+                  <div class="time">10:10Am</div>
+                </div>
+                <div class="more" id="more">
+                  <i class="fa-solid fa-ellipsis"></i>
+                  <p class="sideName">More</p>
+                </div>
+                <div class="delete" id="delete" onclick="delTwo()">
+                  <i class="fa-solid fa-trash"></i>
+                  <p class="sideName">Delete</p>
+                </div>
+              </div>
+              <div class="box3" id="parent3">
+                <div class="unread" id="unread3">
+                  <i class="fa-regular fa-comment-dots"></i>
+                  <p class="sideName">Unread</p>
+                </div>
+                <div class="pin" id="pin3">
+                  <i class="fa-solid fa-thumbtack"></i>
+                  <p class="sideName">Pin</p>
+                </div>
+
+                <div class="message-box" id="message2">
+                  <div class="row">
+                    <div class="user-image3"></div>
+                    <div class="text">
+                      <p class="text-name">Emmanuel</p>
+                      <p class="sideName">How far i get contract for you</p>
+                    </div>
+                  </div>
+                  <div class="time">9:40Am</div>
+                </div>
+                <div class="more" id="more">
+                  <i class="fa-solid fa-ellipsis"></i>
+                  <p class="sideName">More</p>
+                </div>
+                <div class="delete" id="delete" onclick="delThree()">
+                  <i class="fa-solid fa-trash"></i>
+                  <p class="sideName">Delete</p>
+                </div>
               </div>
 
-              <div class="message-box" id="message">
-                <div class="row">
-                  <div class="user-image"></div>
-                  <div class="text">
-                    <p class="text-name">Joy</p>
-                    <p class="sideName">Hey John, Are you free for a job</p>
-                  </div>
+              <div class="box4" id="parent4">
+                <div class="unread" id="unread4">
+                  <i class="fa-regular fa-comment-dots"></i>
+                  <p class="sideName">Unread</p>
                 </div>
-                <div class="time">11:30Am</div>
-              </div>
-              <div class="more" id="more">
-                <i class="fa-solid fa-ellipsis"></i>
-                <p class="sideName">More</p>
-              </div>
-              <div class="delete" id="delete">
-                <i class="fa-solid fa-trash"></i>
-                <p class="sideName">Delete</p>
-              </div>
-            </div>
-            <div class="box1" id="parent2">
-              <div class="unread" id="unread2">
-                <i class="fa-regular fa-comment-dots"></i>
-                <p class="sideName">Unread</p>
-              </div>
-              <div class="pin" id="pin2">
-                <i class="fa-solid fa-thumbtack"></i>
-                <p class="sideName">Pin</p>
-              </div>
+                <div class="pin" id="pin4">
+                  <i class="fa-solid fa-thumbtack"></i>
+                  <p class="sideName">Pin</p>
+                </div>
 
-              <div class="message-box" id="message">
-                <div class="row">
-                  <div class="user-image2"></div>
-                  <div class="text">
-                    <p class="text-name">Victor</p>
-                    <p class="sideName">How far guy</p>
+                <div class="message-box" id="message3">
+                  <div class="row">
+                    <div class="user-image4"></div>
+                    <div class="text">
+                      <p class="text-name">Kelly</p>
+                      <p class="sideName">Hiii</p>
+                    </div>
                   </div>
+                  <div class="time">9:30Am</div>
                 </div>
-                <div class="time">10:10Am</div>
-              </div>
-              <div class="more" id="more">
-                <i class="fa-solid fa-ellipsis"></i>
-                <p class="sideName">More</p>
-              </div>
-              <div class="delete" id="delete">
-                <i class="fa-solid fa-trash"></i>
-                <p class="sideName">Delete</p>
+                <div class="more" id="more">
+                  <i class="fa-solid fa-ellipsis"></i>
+                  <p class="sideName">More</p>
+                </div>
+                <div class="delete" id="delete" onclick="delFour()">
+                  <i class="fa-solid fa-trash"></i>
+                  <p class="sideName">Delete</p>
+                </div>
               </div>
             </div>
           </div>
+          <div class="home-section" id="home-section"><p>Home</p></div>
+          <div class="call-section" id="call-section"><p>Call</p></div>
+          <div class="community-section" id="community-section">Community</div>
         </section>
       </div>
     </div>
