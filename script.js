@@ -4,11 +4,19 @@ parent.scrollLeft += document.querySelector("#pin").clientWidth;
 var position;
 window.mouseDown = false;
 document.onmousedown = function (e) {
-  window.mouseDown = true;
-  position = e.pageX + 230;
-  position2 = e.pageX + 230;
-  position3 = e.pageX + 230;
-  position4 = e.pageX + 230;
+  if (window.innerWidth > 500) {
+    window.mouseDown = true;
+    position = e.pageX + 230;
+    position2 = e.pageX + 230;
+    position3 = e.pageX + 230;
+    position4 = e.pageX + 230;
+  } else {
+    window.mouseDown = false;
+    position = -1;
+    position2 = -1;
+    position3 = -1;
+    position4 = -1;
+  }
 };
 document.onmouseup = function () {
   window.mouseDown = false;
@@ -30,12 +38,11 @@ parent.addEventListener("mousemove", (e) => {
     var remainder = position - e.pageX;
     remainder = remainder > 453 ? 453 : remainder;
     remainder = remainder < 0 ? 0 : remainder;
-    if (window.innerWidth > 500) {
-      parent.scrollLeft = remainder;
-      parent2.scrollLeft = 230;
-      parent3.scrollLeft = 230;
-      parent4.scrollLeft = 230;
-    }
+
+    parent.scrollLeft = remainder;
+    parent2.scrollLeft = 230;
+    parent3.scrollLeft = 230;
+    parent4.scrollLeft = 230;
   }
 });
 
@@ -53,12 +60,10 @@ parent2.addEventListener("mousemove", (e) => {
     var remainder = position2 - e.pageX;
     remainder = remainder > 453 ? 453 : remainder;
     remainder = remainder < 0 ? 0 : remainder;
-    if (window.innerWidth > 500) {
-      parent2.scrollLeft = remainder;
-      parent.scrollLeft = 230;
-      parent3.scrollLeft = 230;
-      parent4.scrollLeft = 230;
-    }
+    parent2.scrollLeft = remainder;
+    parent.scrollLeft = 230;
+    parent3.scrollLeft = 230;
+    parent4.scrollLeft = 230;
   }
 });
 
@@ -76,12 +81,11 @@ parent3.addEventListener("mousemove", (e) => {
     var remainder = position3 - e.pageX;
     remainder = remainder > 453 ? 453 : remainder;
     remainder = remainder < 0 ? 0 : remainder;
-    if (window.innerWidth > 500) {
-      parent3.scrollLeft = remainder;
-      parent.scrollLeft = 230;
-      parent2.scrollLeft = 230;
-      parent4.scrollLeft = 230;
-    }
+
+    parent3.scrollLeft = remainder;
+    parent.scrollLeft = 230;
+    parent2.scrollLeft = 230;
+    parent4.scrollLeft = 230;
   }
 });
 
