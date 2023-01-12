@@ -10,6 +10,7 @@ document.onmousedown = function (e) {
   window.mouseDown = true;
   position = e.pageX;
   position2 = e.pageX;
+  position3 = e.pageX;
 };
 
 document.onmouseup = function () {
@@ -24,6 +25,11 @@ document.onmouseup = function () {
     more2.style.transform = `translateX(60px)`;
     pin2.style.transform = `translateX(-60px)`;
   }
+  if (remainder3 != -120 && remainder3 != 120) {
+    messageBox3.style.transform = `translateX(0)`;
+    more3.style.transform = `translateX(60px)`;
+    pin3.style.transform = `translateX(-60px)`;
+  }
 };
 parent.addEventListener("mousemove", (e) => {
   if (window.mouseDown) {
@@ -33,6 +39,14 @@ parent.addEventListener("mousemove", (e) => {
     messageBox1.style.transform = `translateX(${remainder}px)`;
     pin1.style.transform = `translateX(${remainder - 60}px)`;
     more1.style.transform = `translateX(${remainder - -60}px)`;
+
+    messageBox2.style.transform = `translateX(${0})`;
+    pin2.style.transform = `translateX(${-60}px)`;
+    more2.style.transform = `translateX(${60}px)`;
+
+    messageBox3.style.transform = `translateX(${0})`;
+    pin3.style.transform = `translateX(${-60}px)`;
+    more3.style.transform = `translateX(${60}px)`;
   }
 });
 parent.addEventListener("touchmove", (e) => {
@@ -72,6 +86,14 @@ parent2.addEventListener("mousemove", (e) => {
     messageBox2.style.transform = `translateX(${remainder2}px)`;
     pin2.style.transform = `translateX(${remainder2 - 60}px)`;
     more2.style.transform = `translateX(${remainder2 - -60}px)`;
+
+    messageBox1.style.transform = `translateX(${0})`;
+    pin1.style.transform = `translateX(${-60}px)`;
+    more1.style.transform = `translateX(${60}px)`;
+
+    messageBox3.style.transform = `translateX(${0})`;
+    pin3.style.transform = `translateX(${-60}px)`;
+    more3.style.transform = `translateX(${60}px)`;
   }
 });
 parent2.addEventListener("touchmove", (e) => {
@@ -95,10 +117,44 @@ function delTwo() {
   box[0].classList.add("disappear");
 }
 
-/*var position3;
+var messageBox3 = document.getElementById("message2");
+var more3 = document.getElementById("more3");
+var pin3 = document.getElementById("pin3");
+var remainder3;
+var position3;
+var parent2 = document.getElementById("parent3");
+var touchMovement3;
 parent3.addEventListener("mousemove", (e) => {
   if (window.mouseDown) {
-    var remainder = position3 - e.pageX;
+    remainder3 = e.pageX - position3;
+    remainder3 = remainder3 < -120 ? -120 : remainder3;
+    remainder3 = remainder3 > 120 ? 120 : remainder3;
+    messageBox3.style.transform = `translateX(${remainder3}px)`;
+    pin3.style.transform = `translateX(${remainder3 - 60}px)`;
+    more3.style.transform = `translateX(${remainder3 - -60}px)`;
+
+    messageBox2.style.transform = `translateX(${0})`;
+    pin2.style.transform = `translateX(${-60}px)`;
+    more2.style.transform = `translateX(${60}px)`;
+
+    messageBox1.style.transform = `translateX(${0})`;
+    pin1.style.transform = `translateX(${-60}px)`;
+    more1.style.transform = `translateX(${60}px)`;
+  }
+});
+parent3.addEventListener("touchmove", (e) => {
+  touchMovement3 = e.touches[0].clientX - window.innerWidth / 2;
+  touchMovement3 = touchMovement3 > 120 ? 120 : touchMovement3;
+  touchMovement3 = touchMovement3 < -120 ? -120 : touchMovement3;
+  messageBox3.style.transform = `translateX(${touchMovement3}px)`;
+  pin3.style.transform = `translateX(${touchMovement3 - 60}px)`;
+  more3.style.transform = `translateX(${touchMovement3 - -60}px)`;
+});
+parent3.addEventListener("touchend", (e) => {
+  if (touchMovement3 != -120 && touchMovement3 != 120) {
+    messageBox3.style.transform = `translateX(0)`;
+    more3.style.transform = `translateX(60px)`;
+    pin3.style.transform = `translateX(-60px)`;
   }
 });
 
@@ -106,7 +162,7 @@ function delThree() {
   var box = document.getElementsByClassName("box3");
   box[0].classList.add("disappear");
 }
-
+/*
 var parent4 = document.getElementById("parent4");
 parent4.scrollLeft += document.querySelector("#unread4").clientWidth;
 parent4.scrollLeft += document.querySelector("#pin4").clientWidth;
