@@ -67,7 +67,7 @@ body {
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
-  height: 70%;
+  height: 100%;
   position: relative;
   transition: all 0.5s;
 }
@@ -312,8 +312,14 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-.messages::-webkit-scrollbar {
+.messages::-webkit-scrollbar,
+.chat-section::-webkit-scrollbar {
   display: none;
+}
+.chat-section {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
 }
 .text {
   padding-left: 8px;
@@ -381,12 +387,7 @@ body {
   .text-name {
     padding-top: 4px;
   }
-  .chat-section,
-  .call-section,
-  .home-section {
-    height: 65%;
-  }
-  .community-section {
-    height: 65%;
+  .view {
+    height: 60%;
   }
 }
