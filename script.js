@@ -5,6 +5,7 @@ var pin1 = document.getElementById("pin");
 var parent = document.getElementById("parent");
 var remainder;
 var touchMovement;
+var touchPosition;
 window.mouseDown = false;
 document.onmousedown = function (e) {
   window.mouseDown = true;
@@ -49,13 +50,21 @@ parent.addEventListener("mousemove", (e) => {
     more3.style.transform = `translateX(${60}px)`;
   }
 });
+parent.addEventListener("touchstart", (e) => {
+  touchPosition = e.touches[0].pageX;
+});
 parent.addEventListener("touchmove", (e) => {
-  touchMovement = e.touches[0].clientX;
-  touchMovement = touchMovement > 120 ? 120 : touchMovement;
-  touchMovement = touchMovement < -120 ? -120 : touchMovement;
-  messageBox1.style.transform = `translateX(${touchMovement}px)`;
-  pin1.style.transform = `translateX(${touchMovement - 60}px)`;
-  more1.style.transform = `translateX(${touchMovement - -60}px)`;
+  touchMovement = e.touches[0].pageX;
+  /*touchMovement = touchMovement > 120 ? 120 : touchMovement;
+  touchMovement = touchMovement < -120 ? -120 : touchMovement;*/
+
+  if (touchMovement > touchPosition) {
+    messageBox1.style.transform = `translateX(${touchMovement}px)`;
+    pin1.style.transform = `translateX(${touchMovement - 60}px)`;
+  } else {
+    more1.style.transform = `translateX(-${touchMovement - 60}px)`;
+    messageBox1.style.transform = `translateX(-${touchMovement}px)`;
+  }
 
   messageBox2.style.transform = `translateX(${0})`;
   pin2.style.transform = `translateX(${-60}px)`;
