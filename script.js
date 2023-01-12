@@ -1,44 +1,39 @@
-var parent = document.getElementById("parent");
-parent.scrollLeft += document.querySelector("#unread").clientWidth;
-parent.scrollLeft += document.querySelector("#pin").clientWidth;
 var position;
+var messageBox1 = document.getElementById("message");
+var more1 = document.getElementById("more");
+var pin1 = document.getElementById("pin");
+var parent = document.getElementById("parent");
+var remainder;
 window.mouseDown = false;
-if (window.innerWidth > 500) {
-  document.onmousedown = function (e) {
-    window.mouseDown = true;
-    position = e.pageX + 230;
-    position2 = e.pageX + 230;
-    position3 = e.pageX + 230;
-    position4 = e.pageX + 230;
-  };
-}
-if (window.innerWidth > 500) {
-  document.onmouseup = function () {
-    window.mouseDown = false;
-    if (parent.scrollLeft < 453 && parent.scrollLeft != 0) {
-      parent.scrollLeft = 230;
-    }
-    if (parent2.scrollLeft < 453 && parent2.scrollLeft != 0) {
-      parent2.scrollLeft = 230;
-    }
-    if (parent3.scrollLeft < 453 && parent3.scrollLeft != 0) {
-      parent3.scrollLeft = 230;
-    }
-    if (parent4.scrollLeft < 453 && parent4.scrollLeft != 0) {
-      parent4.scrollLeft = 230;
-    }
-  };
-}
+document.onmousedown = function (e) {
+  window.mouseDown = true;
+  position = e.pageX;
+  position2 = e.pageX;
+};
+
+document.onmouseup = function () {
+  window.mouseDown = false;
+  if (remainder != -120 && remainder != 120) {
+    messageBox1.style.transform = `translateX(0)`;
+    more1.style.transform = `translateX(60px)`;
+    pin1.style.transform = `translateX(-60px)`;
+  }
+  if (remainder2 != -120 && remainder2 != 120) {
+    messageBox2.style.transform = `translateX(0)`;
+    more2.style.transform = `translateX(60px)`;
+    pin2.style.transform = `translateX(-60px)`;
+  }
+};
 parent.addEventListener("mousemove", (e) => {
   if (window.mouseDown) {
-    var remainder = position - e.pageX;
-    remainder = remainder > 453 ? 453 : remainder;
-    remainder = remainder < 0 ? 0 : remainder;
-
-    parent.scrollLeft = remainder;
-    parent2.scrollLeft = 230;
-    parent3.scrollLeft = 230;
-    parent4.scrollLeft = 230;
+    remainder = e.pageX - position;
+    remainder = remainder < -120 ? -120 : remainder;
+    remainder = remainder > 120 ? 120 : remainder;
+    if (window.innerWidth > 450) {
+      messageBox1.style.transform = `translateX(${remainder}px)`;
+      pin1.style.transform = `translateX(${remainder - 60}px)`;
+      more1.style.transform = `translateX(${remainder - -60}px)`;
+    }
   }
 });
 
@@ -47,19 +42,22 @@ function delOne() {
   box[0].classList.add("disappear");
 }
 
-var parent2 = document.getElementById("parent2");
-parent2.scrollLeft += document.querySelector("#unread2").clientWidth;
-parent2.scrollLeft += document.querySelector("#pin2").clientWidth;
+var messageBox2 = document.getElementById("message1");
+var more2 = document.getElementById("more2");
+var pin2 = document.getElementById("pin2");
+var remainder2;
 var position2;
+var parent2 = document.getElementById("parent2");
 parent2.addEventListener("mousemove", (e) => {
   if (window.mouseDown) {
-    var remainder = position2 - e.pageX;
-    remainder = remainder > 453 ? 453 : remainder;
-    remainder = remainder < 0 ? 0 : remainder;
-    parent2.scrollLeft = remainder;
-    parent.scrollLeft = 230;
-    parent3.scrollLeft = 230;
-    parent4.scrollLeft = 230;
+    remainder2 = e.pageX - position2;
+    remainder2 = remainder2 < -120 ? -120 : remainder2;
+    remainder2 = remainder2 > 120 ? 120 : remainder2;
+    if (window.innerWidth > 450) {
+      messageBox2.style.transform = `translateX(${remainder2}px)`;
+      pin2.style.transform = `translateX(${remainder2 - 60}px)`;
+      more2.style.transform = `translateX(${remainder2 - -60}px)`;
+    }
   }
 });
 
@@ -68,20 +66,10 @@ function delTwo() {
   box[0].classList.add("disappear");
 }
 
-var parent3 = document.getElementById("parent3");
-parent3.scrollLeft += document.querySelector("#unread3").clientWidth;
-parent3.scrollLeft += document.querySelector("#pin3").clientWidth;
-var position3;
+/*var position3;
 parent3.addEventListener("mousemove", (e) => {
   if (window.mouseDown) {
     var remainder = position3 - e.pageX;
-    remainder = remainder > 453 ? 453 : remainder;
-    remainder = remainder < 0 ? 0 : remainder;
-
-    parent3.scrollLeft = remainder;
-    parent.scrollLeft = 230;
-    parent2.scrollLeft = 230;
-    parent4.scrollLeft = 230;
   }
 });
 
@@ -97,14 +85,6 @@ var position4;
 parent4.addEventListener("mousemove", (e) => {
   if (window.mouseDown) {
     var remainder = position4 - e.pageX;
-    remainder = remainder > 453 ? 453 : remainder;
-    remainder = remainder < 0 ? 0 : remainder;
-    if (window.innerWidth > 500) {
-      parent4.scrollLeft = remainder;
-      parent.scrollLeft = 230;
-      parent2.scrollLeft = 230;
-      parent3.scrollLeft = 230;
-    }
   }
 });
 
@@ -112,7 +92,7 @@ function delFour() {
   var box = document.getElementsByClassName("box4");
   box[0].classList.add("disappear");
 }
-
+*/
 var chatSection = document.getElementById("chat-section");
 var homeSection = document.getElementById("home-section");
 var callSection = document.getElementById("call-section");
