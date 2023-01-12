@@ -4,6 +4,7 @@ var more1 = document.getElementById("more");
 var pin1 = document.getElementById("pin");
 var parent = document.getElementById("parent");
 var remainder;
+var touchMovement;
 window.mouseDown = false;
 document.onmousedown = function (e) {
   window.mouseDown = true;
@@ -35,11 +36,17 @@ parent.addEventListener("mousemove", (e) => {
   }
 });
 parent.addEventListener("touchmove", (e) => {
-  var touchMovement = e.touches[0].clientX - 150;
+  touchMovement = e.touches[0].clientX - 150;
   touchMovement = touchMovement > 120 ? 120 : touchMovement;
   touchMovement = touchMovement < -120 ? -120 : touchMovement;
   messageBox1.style.transform = `translateX(${touchMovement}px)`;
 });
+parent.addEventListener("touchend", (e) => {
+  if (touchMovement != -120 && touchMovement != 120) {
+    messageBox1.style.transform = `translateX(0)`;
+  }
+});
+
 function delOne() {
   var box = document.getElementsByClassName("box1");
   box[0].classList.add("disappear");
