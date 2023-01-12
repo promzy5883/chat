@@ -62,6 +62,7 @@ var pin2 = document.getElementById("pin2");
 var remainder2;
 var position2;
 var parent2 = document.getElementById("parent2");
+var touchMovement2;
 
 parent2.addEventListener("mousemove", (e) => {
   if (window.mouseDown) {
@@ -71,6 +72,21 @@ parent2.addEventListener("mousemove", (e) => {
     messageBox2.style.transform = `translateX(${remainder2}px)`;
     pin2.style.transform = `translateX(${remainder2 - 60}px)`;
     more2.style.transform = `translateX(${remainder2 - -60}px)`;
+  }
+});
+parent2.addEventListener("touchmove", (e) => {
+  touchMovement2 = e.touches[0].clientX - window.innerWidth / 2;
+  touchMovement2 = touchMovement2 > 120 ? 120 : touchMovement2;
+  touchMovement2 = touchMovement2 < -120 ? -120 : touchMovement2;
+  messageBox2.style.transform = `translateX(${touchMovement2}px)`;
+  pin2.style.transform = `translateX(${touchMovement2 - 60}px)`;
+  more2.style.transform = `translateX(${touchMovement2 - -60}px)`;
+});
+parent2.addEventListener("touchend", (e) => {
+  if (touchMovement2 != -120 && touchMovement2 != 120) {
+    messageBox2.style.transform = `translateX(0)`;
+    more2.style.transform = `translateX(60px)`;
+    pin2.style.transform = `translateX(-60px)`;
   }
 });
 
