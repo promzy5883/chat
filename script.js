@@ -25,15 +25,13 @@ document.onmouseup = function () {
   }
 };
 parent.addEventListener("mousemove", (e) => {
-  if (window.mouseDown) {
+  if (window.mouseDown && window.innerWidth > 450) {
     remainder = e.pageX - position;
     remainder = remainder < -120 ? -120 : remainder;
     remainder = remainder > 120 ? 120 : remainder;
-    if (window.innerWidth > 450) {
-      messageBox1.style.transform = `translateX(${remainder}px)`;
-      pin1.style.transform = `translateX(${remainder - 60}px)`;
-      more1.style.transform = `translateX(${remainder - -60}px)`;
-    }
+    messageBox1.style.transform = `translateX(${remainder}px)`;
+    pin1.style.transform = `translateX(${remainder - 60}px)`;
+    more1.style.transform = `translateX(${remainder - -60}px)`;
   }
 });
 
@@ -48,16 +46,15 @@ var pin2 = document.getElementById("pin2");
 var remainder2;
 var position2;
 var parent2 = document.getElementById("parent2");
+
 parent2.addEventListener("mousemove", (e) => {
-  if (window.mouseDown) {
+  if (window.mouseDown && window.innerWidth > 450) {
     remainder2 = e.pageX - position2;
     remainder2 = remainder2 < -120 ? -120 : remainder2;
     remainder2 = remainder2 > 120 ? 120 : remainder2;
-    if (window.innerWidth > 450) {
-      messageBox2.style.transform = `translateX(${remainder2}px)`;
-      pin2.style.transform = `translateX(${remainder2 - 60}px)`;
-      more2.style.transform = `translateX(${remainder2 - -60}px)`;
-    }
+    messageBox2.style.transform = `translateX(${remainder2}px)`;
+    pin2.style.transform = `translateX(${remainder2 - 60}px)`;
+    more2.style.transform = `translateX(${remainder2 - -60}px)`;
   }
 });
 
