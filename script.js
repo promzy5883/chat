@@ -43,11 +43,13 @@ parent.addEventListener("touchmove", (e) => {
   pin1.style.transform = `translateX(${touchMovement - 60}px)`;
   more1.style.transform = `translateX(${touchMovement - -60}px)`;
 });
-/*parent.addEventListener("touchend", (e) => {
+parent.addEventListener("touchend", (e) => {
   if (touchMovement != -120 && touchMovement != 120) {
     messageBox1.style.transform = `translateX(0)`;
+    more1.style.transform = `translateX(60px)`;
+    pin1.style.transform = `translateX(-60px)`;
   }
-});*/
+});
 
 function delOne() {
   var box = document.getElementsByClassName("box1");
