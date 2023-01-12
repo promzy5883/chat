@@ -34,7 +34,9 @@ parent.addEventListener("mousemove", (e) => {
     more1.style.transform = `translateX(${remainder - -60}px)`;
   }
 });
-
+parent.addEventListener("touchmove", (e) => {
+  messageBox2.innerHTML = e.touches[0].clientX;
+});
 function delOne() {
   var box = document.getElementsByClassName("box1");
   box[0].classList.add("disappear");
