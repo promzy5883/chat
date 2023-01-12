@@ -64,9 +64,9 @@ parent.addEventListener("touchmove", (e) => {
     pin1.style.transform = `translateX(${touchMovement - 60}px)`;
     more1.style.transform = `translateX(${touchMovement - 60}px)`;
   } else {
-    touchMovement = touchMovement > 120 ? 120 : touchMovement - 20;
-    more1.style.transform = `translateX(-${touchMovement - 60 + 20}px)`;
-    messageBox1.style.transform = `translateX(-${touchMovement + 20}px)`;
+    touchMovement = touchMovement > 120 ? 120 : touchMovement;
+    more1.style.transform = `translateX(-${touchMovement - 60}px)`;
+    messageBox1.style.transform = `translateX(-${touchMovement}px)`;
     pin1.style.transform = `translateX(-${touchMovement - 60}px)`;
   }
 
@@ -78,7 +78,7 @@ parent.addEventListener("touchmove", (e) => {
   pin3.style.transform = `translateX(${-60}px)`;
   more3.style.transform = `translateX(${60}px)`;
 });
-parent.addEventListener("touchend", (e) => {
+parent.addEventListener("touchend", () => {
   if (touchMovement != 120) {
     messageBox1.style.transform = `translateX(0)`;
     more1.style.transform = `translateX(60px)`;
