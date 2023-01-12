@@ -25,7 +25,7 @@ document.onmouseup = function () {
   }
 };
 parent.addEventListener("mousemove", (e) => {
-  if (window.mouseDown && window.innerWidth > 450) {
+  if (window.mouseDown) {
     remainder = e.pageX - position;
     remainder = remainder < -120 ? -120 : remainder;
     remainder = remainder > 120 ? 120 : remainder;
@@ -48,7 +48,7 @@ var position2;
 var parent2 = document.getElementById("parent2");
 
 parent2.addEventListener("mousemove", (e) => {
-  if (window.mouseDown && window.innerWidth > 450) {
+  if (window.mouseDown) {
     remainder2 = e.pageX - position2;
     remainder2 = remainder2 < -120 ? -120 : remainder2;
     remainder2 = remainder2 > 120 ? 120 : remainder2;
