@@ -41,11 +41,11 @@ parent.addEventListener("touchmove", (e) => {
   touchMovement = touchMovement < -120 ? -120 : touchMovement;
   messageBox1.style.transform = `translateX(${touchMovement}px)`;
 });
-parent.addEventListener("touchend", (e) => {
+/*parent.addEventListener("touchend", (e) => {
   if (touchMovement != -120 && touchMovement != 120) {
     messageBox1.style.transform = `translateX(0)`;
   }
-});
+});*/
 
 function delOne() {
   var box = document.getElementsByClassName("box1");
