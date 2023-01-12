@@ -50,7 +50,7 @@ parent.addEventListener("mousemove", (e) => {
   }
 });
 parent.addEventListener("touchmove", (e) => {
-  touchMovement = e.touches[0].clientX - window.innerWidth / 2;
+  touchMovement = e.touches[0].clientX;
   touchMovement = touchMovement > 120 ? 120 : touchMovement;
   touchMovement = touchMovement < -120 ? -120 : touchMovement;
   messageBox1.style.transform = `translateX(${touchMovement}px)`;
