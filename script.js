@@ -56,6 +56,14 @@ parent.addEventListener("touchmove", (e) => {
   messageBox1.style.transform = `translateX(${touchMovement}px)`;
   pin1.style.transform = `translateX(${touchMovement - 60}px)`;
   more1.style.transform = `translateX(${touchMovement - -60}px)`;
+
+  messageBox2.style.transform = `translateX(${0})`;
+  pin2.style.transform = `translateX(${-60}px)`;
+  more2.style.transform = `translateX(${60}px)`;
+
+  messageBox3.style.transform = `translateX(${0})`;
+  pin3.style.transform = `translateX(${-60}px)`;
+  more3.style.transform = `translateX(${60}px)`;
 });
 parent.addEventListener("touchend", (e) => {
   if (touchMovement != -120 && touchMovement != 120) {
@@ -103,6 +111,14 @@ parent2.addEventListener("touchmove", (e) => {
   messageBox2.style.transform = `translateX(${touchMovement2}px)`;
   pin2.style.transform = `translateX(${touchMovement2 - 60}px)`;
   more2.style.transform = `translateX(${touchMovement2 - -60}px)`;
+
+  messageBox1.style.transform = `translateX(${0})`;
+  pin1.style.transform = `translateX(${-60}px)`;
+  more1.style.transform = `translateX(${60}px)`;
+
+  messageBox3.style.transform = `translateX(${0})`;
+  pin3.style.transform = `translateX(${-60}px)`;
+  more3.style.transform = `translateX(${60}px)`;
 });
 parent2.addEventListener("touchend", (e) => {
   if (touchMovement2 != -120 && touchMovement2 != 120) {
@@ -149,6 +165,14 @@ parent3.addEventListener("touchmove", (e) => {
   messageBox3.style.transform = `translateX(${touchMovement3}px)`;
   pin3.style.transform = `translateX(${touchMovement3 - 60}px)`;
   more3.style.transform = `translateX(${touchMovement3 - -60}px)`;
+
+  messageBox2.style.transform = `translateX(${0})`;
+  pin2.style.transform = `translateX(${-60}px)`;
+  more2.style.transform = `translateX(${60}px)`;
+
+  messageBox1.style.transform = `translateX(${0})`;
+  pin1.style.transform = `translateX(${-60}px)`;
+  more1.style.transform = `translateX(${60}px)`;
 });
 parent3.addEventListener("touchend", (e) => {
   if (touchMovement3 != -120 && touchMovement3 != 120) {
