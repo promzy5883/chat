@@ -384,6 +384,7 @@ body {
   .call-section,
   .home-section {
     height: 65%;
+    background-color: black;
   }
   .community-section {
     height: 65%;
