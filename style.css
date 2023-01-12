@@ -112,6 +112,7 @@ body {
   height: calc(100vh - 110px);
   overflow-x: hidden;
   display: flex;
+  background-color: black;
 }
 .dashboard__content-1 {
   display: flex;
@@ -384,7 +385,6 @@ body {
   .call-section,
   .home-section {
     height: 65%;
-    background-color: black;
   }
   .community-section {
     height: 65%;
