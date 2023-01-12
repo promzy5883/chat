@@ -391,4 +391,7 @@ body {
   .text-name {
     padding-top: 4px;
   }
+  .chat-section {
+    padding: 0 5px;
+  }
 }
