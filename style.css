@@ -109,10 +109,9 @@ body {
 .view {
   position: relative;
   width: 100%;
-  height: calc(100vh - 110px);
+  min-height: 80vh;
   overflow-x: hidden;
   display: flex;
-  background-color: black;
 }
 .dashboard__content-1 {
   display: flex;
