@@ -79,7 +79,7 @@ parent.addEventListener("touchmove", (e) => {
   more3.style.transform = `translateX(${60}px)`;
 });
 parent.addEventListener("touchend", (e) => {
-  if (touchMovement != -120 && touchMovement != 120) {
+  if (touchMovement != 120) {
     messageBox1.style.transform = `translateX(0)`;
     more1.style.transform = `translateX(60px)`;
     pin1.style.transform = `translateX(-60px)`;
