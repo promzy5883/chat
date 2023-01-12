@@ -51,10 +51,10 @@ parent.addEventListener("mousemove", (e) => {
   }
 });
 parent.addEventListener("touchstart", (e) => {
-  touchPosition = e.touches[0].pageX;
+  touchPosition = e.touches[0].clientX;
 });
 parent.addEventListener("touchmove", (e) => {
-  touchMovement = e.touches[0].pageX;
+  touchMovement = e.touches[0].clientX;
   /*touchMovement = touchMovement > 120 ? 120 : touchMovement;
   touchMovement = touchMovement < -120 ? -120 : touchMovement;*/
 
