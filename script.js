@@ -35,7 +35,10 @@ parent.addEventListener("mousemove", (e) => {
   }
 });
 parent.addEventListener("touchmove", (e) => {
-  messageBox2.innerHTML = e.touches[0].clientX - 150;
+  var touchMovement = e.touches[0].clientX - 150;
+  touchMovement = touchMovement > 120 ? 120 : touchMovement;
+  touchMovement = touchMovement < -120 ? -120 : touchMovement;
+  messageBox1.style.transform = `translateX(${touchMovement}px)`;
 });
 function delOne() {
   var box = document.getElementsByClassName("box1");
