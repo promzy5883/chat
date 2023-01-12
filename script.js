@@ -59,6 +59,7 @@ parent.addEventListener("touchmove", (e) => {
   touchMovement = touchMovement < -120 ? -120 : touchMovement;*/
 
   if (touchMovement > touchPosition) {
+    touchMovement = touchMovement > 120 ? 120 : touchMovement;
     messageBox1.style.transform = `translateX(${touchMovement}px)`;
     pin1.style.transform = `translateX(${touchMovement - 60}px)`;
   } else {
