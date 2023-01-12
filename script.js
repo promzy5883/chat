@@ -6,6 +6,7 @@ var parent = document.getElementById("parent");
 var remainder;
 var touchMovement;
 var touchPosition;
+var touchRemainder;
 window.mouseDown = false;
 document.onmousedown = function (e) {
   window.mouseDown = true;
@@ -55,19 +56,18 @@ parent.addEventListener("touchstart", (e) => {
 });
 parent.addEventListener("touchmove", (e) => {
   touchMovement = e.touches[0].pageX;
-  /*touchMovement = touchMovement > 120 ? 120 : touchMovement;
-  touchMovement = touchMovement < -120 ? -120 : touchMovement;*/
-
   if (touchMovement > touchPosition) {
-    touchMovement = touchMovement > 120 ? 120 : touchMovement;
-    messageBox1.style.transform = `translateX(${touchMovement}px)`;
-    pin1.style.transform = `translateX(${touchMovement - 60}px)`;
-    more1.style.transform = `translateX(${touchMovement - 60}px)`;
+    touchRemainder = touchMovement - touchPosition;
+    touchRemainder = touchRemainder > 120 ? 120 : touchRemainder;
+    messageBox1.style.transform = `translateX(${touchRemainder}px)`;
+    pin1.style.transform = `translateX(${touchRemainder - 60}px)`;
+    more1.style.transform = `translateX(${touchRemainder - 60}px)`;
   } else {
-    touchMovement = touchMovement > 120 ? 120 : touchMovement;
-    more1.style.transform = `translateX(-${touchMovement - 60}px)`;
-    messageBox1.style.transform = `translateX(-${touchMovement}px)`;
-    pin1.style.transform = `translateX(-${touchMovement - 60}px)`;
+    touchRemainder = touchPosition - touchMovement;
+    touchRemainder = touchRemainder > 120 ? 120 : touchRemainder;
+    more1.style.transform = `translateX(-${touchRemainder - 60}px)`;
+    messageBox1.style.transform = `translateX(-${touchRemainder}px)`;
+    pin1.style.transform = `translateX(-${touchRemainder - 60}px)`;
   }
 
   messageBox2.style.transform = `translateX(${0})`;
@@ -79,7 +79,7 @@ parent.addEventListener("touchmove", (e) => {
   more3.style.transform = `translateX(${60}px)`;
 });
 parent.addEventListener("touchend", () => {
-  if (touchMovement != 120) {
+  if (touchRemainder != 120) {
     messageBox1.style.transform = `translateX(0)`;
     more1.style.transform = `translateX(60px)`;
     pin1.style.transform = `translateX(-60px)`;
