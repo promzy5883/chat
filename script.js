@@ -57,13 +57,13 @@ parent.addEventListener("touchstart", (e) => {
 parent.addEventListener("touchmove", (e) => {
   touchMovement = e.touches[0].pageX;
   if (touchMovement > touchPosition) {
-    touchRemainder = touchMovement - touchPosition;
+    touchRemainder = (touchMovement - touchPosition) / 2;
     touchRemainder = touchRemainder > 120 ? 120 : touchRemainder;
     messageBox1.style.transform = `translateX(${touchRemainder}px)`;
     pin1.style.transform = `translateX(${touchRemainder - 60}px)`;
     more1.style.transform = `translateX(${touchRemainder - 60}px)`;
   } else {
-    touchRemainder = touchPosition - touchMovement;
+    touchRemainder = (touchPosition - touchMovement) / 2;
     touchRemainder = touchRemainder > 120 ? 120 : touchRemainder;
     more1.style.transform = `translateX(-${touchRemainder - 60}px)`;
     messageBox1.style.transform = `translateX(-${touchRemainder}px)`;
