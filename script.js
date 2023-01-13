@@ -59,12 +59,14 @@ parent.addEventListener("touchmove", (e) => {
   if (touchMovement > touchPosition) {
     touchRemainder = touchMovement - touchPosition;
     touchRemainder = touchRemainder > 120 ? 120 : touchRemainder;
+    touchRemainder = touchRemainder < 0 ? 0 : touchRemainder;
     messageBox1.style.transform = `translateX(${touchRemainder}px)`;
     pin1.style.transform = `translateX(${touchRemainder - 60}px)`;
     more1.style.transform = `translateX(${touchRemainder - 60}px)`;
   } else {
     touchRemainder = touchPosition - touchMovement;
     touchRemainder = touchRemainder > 120 ? 120 : touchRemainder;
+    touchRemainder = touchRemainder > 0 ? 0 : touchRemainder;
     more1.style.transform = `translateX(-${touchRemainder - 60}px)`;
     messageBox1.style.transform = `translateX(-${touchRemainder}px)`;
     pin1.style.transform = `translateX(-${touchRemainder - 60}px)`;
