@@ -59,26 +59,23 @@ parent.addEventListener("touchmove", (e) => {
   if (touchMovement > touchPosition) {
     touchRemainder = touchMovement - touchPosition;
     touchRemainder = touchRemainder > 120 ? 120 : touchRemainder;
+    touchRemainder = touchRemainder < 0 ? 0 : touchRemainder;
     messageBox1.style.transform = `translateX(${touchRemainder}px)`;
     pin1.style.transform = `translateX(${touchRemainder - 60}px)`;
     more1.style.transform = `translateX(${touchRemainder - 60}px)`;
-    if (touchRemainder <= 0) {
-      messageBox1.style.transform = `translateX(${0})`;
-      more1.style.transform = `translateX(${60}px)`;
-    }
-  } else {
-    touchRemainder = touchPosition - touchMovement;
-    touchRemainder = touchRemainder > 120 ? 120 : touchRemainder;
-    touchRemainder = touchRemainder > 0 ? 0 : touchRemainder;
-    more1.style.transform = `translateX(-${touchRemainder - 60}px)`;
-    messageBox1.style.transform = `translateX(-${touchRemainder}px)`;
-    pin1.style.transform = `translateX(-${touchRemainder - 60}px)`;
-    if (touchRemainder >= 0) {
-      messageBox1.style.transform = `translateX(${0})`;
-      pin1.style.transform = `translateX(${-60}px)`;
-    }
   }
-
+  parent.addEventListener("touchmove", (e) => {
+    touchMovement = e.touches[0].pageX;
+    if (touchMovement < touchPosition) {
+      touchRemainder = touchPosition - touchMovement;
+      touchRemainder = touchRemainder > 120 ? 120 : touchRemainder;
+      touchRemainder = touchRemainder < 0 ? 0 : touchRemainder;
+      touchRemainder = touchRemainder > 0 ? 0 : touchRemainder;
+      more1.style.transform = `translateX(-${touchRemainder - 60}px)`;
+      messageBox1.style.transform = `translateX(-${touchRemainder}px)`;
+      pin1.style.transform = `translateX(-${touchRemainder - 60}px)`;
+    }
+  });
   messageBox2.style.transform = `translateX(${0})`;
   pin2.style.transform = `translateX(${-60}px)`;
   more2.style.transform = `translateX(${60}px)`;
